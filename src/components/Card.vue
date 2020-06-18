@@ -6,7 +6,7 @@
     <div class="flex mb-2">
       <div class="w-2/3 mr-4">
         <div class="bg-gray-500 rounded-full m-auto">
-          <p class="text-center text-6xl font-bold">{{ task.iceScore }}</p>
+          <p class="text-center text-6xl font-bold">{{ task['ice-score'] }}</p>
         </div>
       </div>
       <div class="w-1/3">
