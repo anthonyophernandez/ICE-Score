@@ -4,5 +4,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  created () {
+    this.$store.dispatch('tasks/loadAll')
+  }
+}
+</script>
+
 <style lang="scss">
 </style>

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Api from '../services/api'
+import { mapState } from 'vuex'
 import Card from '../components/Card.vue'
 import AddForm from '../components/AddForm.vue'
 
@@ -20,19 +20,10 @@ export default {
     Card,
     AddForm
   },
-  data () {
-    return {
-      tasks: []
-    }
-  },
-  created () {
-    this.loadAll()
-  },
-  methods: {
-    async loadAll () {
-      const response = await Api().get('/api/tasks')
-      this.tasks = response.data
-    }
+  computed: {
+    ...mapState({
+      tasks: state => state.tasks.tasks
+    })
   }
 }
 </script>
