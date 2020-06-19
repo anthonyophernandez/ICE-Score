@@ -10,49 +10,76 @@
     {
         "id": 2,
         "description": "Task 2 is nice beacuse X and Y, but also Z. And something to add here and there.",
-        "impact": 5,
-        "confidence": 5,
-        "ease": 5,
-        "iceScore": 5
+        "impact": 9,
+        "confidence": 9,
+        "ease": 9,
+        "iceScore": 9
     },
     {
         "id": 3,
         "description": "Task 3 is nice beacuse X and Y, but also Z. And something to add here and there.",
+        "impact": 8,
+        "confidence": 8,
+        "ease": 8,
+        "iceScore": 8
+    },
+    {
+        "id": 4,
+        "description": "Task 4 is nice beacuse X and Y, but also Z. And something to add here and there.",
+        "impact": 7,
+        "confidence": 7,
+        "ease": 7,
+        "iceScore": 7
+    },
+    {
+        "id": 5,
+        "description": "Task 5 is nice beacuse X and Y, but also Z. And something to add here and there.",
         "impact": 6,
         "confidence": 6,
         "ease": 6,
         "iceScore": 6
     },
     {
-        "id": 4,
-        "description": "Task 4 is nice beacuse X and Y, but also Z. And something to add here and there.",
+        "id": 6,
+        "description": "Task 6 is nice beacuse X and Y, but also Z. And something to add here and there.",
+        "impact": 5,
+        "confidence": 5,
+        "ease": 5,
+        "iceScore": 5
+    },
+    {
+        "id": 7,
+        "description": "Task 7 is nice beacuse X and Y, but also Y. And something to add here and there.",
+        "impact": 4,
+        "confidence": 4,
+        "ease": 4,
+        "iceScore": 4
+    }
+    ,
+    {
+        "id": 8,
+        "description": "Task 8 is nice beacuse X and Y, but also Y. And something to add here and there.",
+        "impact": 3,
+        "confidence": 3,
+        "ease": 3,
+        "iceScore": 3
+    }
+    ,
+    {
+        "id": 9,
+        "description": "Task 9 is nice beacuse X and Y, but also Y. And something to add here and there.",
         "impact": 2,
         "confidence": 2,
         "ease": 2,
         "iceScore": 2
-    },
+    }
+    ,
     {
-        "id": 5,
-        "description": "Task 5 is nice beacuse X and Y, but also Z. And something to add here and there.",
-        "impact": 8,
-        "confidence": 8,
-        "ease": 8,
-        "iceScore": 8
-    },
-    {
-        "id": 6,
-        "description": "Task 6 is nice beacuse X and Y, but also Z. And something to add here and there.",
-        "impact": 8,
-        "confidence": 8,
-        "ease": 8,
-        "iceScore": 8
-    },
-    {
-        "id": 7,
-        "description": "Task 7 is nice beacuse X and Y, but alsto Y. And something to add here and there.",
-        "impact": 8,
-        "confidence": 8,
-        "ease": 8,
-        "iceScore": 8
+        "id": 10,
+        "description": "Task 10 is nice beacuse X and Y, but also Y. And something to add here and there.",
+        "impact": 1,
+        "confidence": 1,
+        "ease": 1,
+        "iceScore": 1
     }
 ]
