@@ -1,8 +1,6 @@
 <template>
   <div class="bg-gray-900 p-4 w-full xl:w-4/5 flex flex-wrap">
-    <div class="w-full bg-white border rounded-lg overflow-hidden p-6 my-2 mx-2">
-      <AddForm />
-    </div>
+    <router-link class="w-full text-center bg-blue-500 font-bold text-white hover:bg-blue-700 py-2 mx-2 rounded" to="/task/new">Add Task</router-link>
     <div class="xl:w-1/4 lg:w-1/3 md:w-1/2 sm:w-full" v-for="task in tasks" :key="task.id">
       <Card :task="task" class="my-2 mx-2"/>
     </div>
@@ -12,13 +10,11 @@
 <script>
 import { mapState } from 'vuex'
 import Card from '../components/Card.vue'
-import AddForm from '../components/AddForm.vue'
 
 export default {
   name: 'Home',
   components: {
-    Card,
-    AddForm
+    Card
   },
   computed: {
     ...mapState({

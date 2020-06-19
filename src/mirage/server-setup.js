@@ -13,5 +13,13 @@ export default function () {
 
     return schema.db.tasks.insert(task)
   })
+
+  server.delete('/tasks/:id', (schema, request) => {
+    return schema.db.tasks.remove(request.params.id)
+  })
+
+  server.put('/tasks/:id', function () {
+    return new Response(200)
+  })
   server.db.loadData({ tasks: tasksJSON })
 }

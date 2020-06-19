@@ -1,8 +1,12 @@
 <template>
 
-  <div class="bg-white border rounded-lg p-6">
+  <div class="flex flex-col bg-white border rounded-lg p-6">
 
-    <h4 class="mb-2 text-gray-500 text-xl text-center uppercase font-extrabold tracking-widest">Task {{ task.id }}</h4>
+    <div class="flex mb-2">
+      <h4 class="w-4/5 text-gray-500 text-xl text-center uppercase font-extrabold tracking-widest">Task {{ task.id }}</h4>
+      <p class="w-1/5 text-xl font-bold text-right cursor-pointer hover:text-red-600" v-on:click="deleteTask(task)">&#215;</p>
+    </div>
+
     <div class="flex mb-2">
       <div class="w-2/3 mr-4">
         <div class="bg-gray-500 rounded-full m-auto" :class="color">
@@ -23,6 +27,8 @@
       <p v-if="showDescription">{{ task.description }}</p>
       <p v-else class="truncate">{{ task.description }}</p>
     </div>
+
+    <router-link :to="`/task/${task.id}/edit`" class="w-full text-center bg-transparent hover:bg-blue-700 text-blue-700 font-bold hover:text-white border border-blue-500 hover:border-transparent py-2 rounded">Edit</router-link>
 
   </div>
 
@@ -55,6 +61,11 @@ export default {
         rankColor = 'bg-yellow-500'
       }
       return rankColor
+    }
+  },
+  methods: {
+    deleteTask (task) {
+      this.$store.dispatch('tasks/delete', task)
     }
   }
 }
