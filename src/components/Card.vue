@@ -9,14 +9,38 @@
 
     <div class="flex mb-2">
       <div class="w-2/3 mr-4">
+
         <div class="bg-gray-500 rounded-full m-auto" :class="color">
-          <p class="text-center text-6xl font-bold">{{ task.iceScore }}</p>
+          <p class="text-center text-6xl font-bold">
+            {{ task.iceScore }}
+          </p>
         </div>
+
       </div>
+
       <div class="w-1/3">
-        <p class="text-xl font-semibold"><span class="text-gray-500">I:</span> {{ task.impact }}</p>
-        <p class="text-xl font-semibold"><span class="text-gray-500">C:</span> {{ task.confidence }}</p>
-        <p class="text-xl font-semibold"><span class="text-gray-500">E:</span> {{ task.ease }}</p>
+
+        <p class="relative text-xl font-semibold">
+          <span class="text-gray-500">I:</span>
+          {{ task.impact }}
+          <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'impact'" @mouseleave="showToolTip = ''">&#9432;</span>
+          <ToolTip class="absolute" v-if="showToolTip === 'impact'" variable='impact'/>
+        </p>
+
+        <p class="relative text-xl font-semibold">
+          <span class="text-gray-500">C:</span>
+          {{ task.confidence }}
+          <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'confidence'" @mouseleave="showToolTip = ''">&#9432;</span>
+          <ToolTip class="absolute" v-if="showToolTip === 'confidence'" variable='confidence'/>
+        </p>
+
+        <p class="relative text-xl font-semibold">
+          <span class="text-gray-500">E:</span>
+          {{ task.ease }}
+          <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'ease'" @mouseleave="showToolTip = ''">&#9432;</span>
+          <ToolTip class="absolute" v-if="showToolTip === 'ease'" variable='ease'/>
+        </p>
+
       </div>
     </div>
 
@@ -35,12 +59,17 @@
 </template>
 
 <script>
+import ToolTip from '../components/ToolTip.vue'
 export default {
   name: 'Card',
   props: ['task'],
+  components: {
+    ToolTip
+  },
   data () {
     return {
-      showDescription: false
+      showDescription: false,
+      showToolTip: ''
     }
   },
   computed: {

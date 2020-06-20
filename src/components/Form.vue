@@ -12,19 +12,34 @@
     </div>
 
     <div class="flex flex-col my-2">
-      <label class="block text-gray-700 text-lg font-bold" for="impact">
+
+      <label class="relative text-gray-700 text-lg font-bold" for="impact">
         Impact: {{ task.impact }}
+        <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'impact'" @mouseleave="showToolTip = ''">&#9432;</span>
+        <ToolTip class="absolute" v-if="showToolTip === 'impact'" variable='impact'/>
       </label>
       <input type="range" min="1" max="10" value="5" id="impact" v-model="task.impact">
-      <label class="block text-gray-700 text-lg font-bold" for="confidence">
+
+      <label class="relative text-gray-700 text-lg font-bold" for="confidence">
         Confidence: {{ task.confidence }}
+        <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'confidence'" @mouseleave="showToolTip = ''">&#9432;</span>
+        <ToolTip class="absolute" v-if="showToolTip === 'confidence'" variable='confidence'/>
       </label>
       <input type="range" min="1" max="10" value="5" id="confidence" v-model="task.confidence">
-      <label class="block text-gray-700 text-lg font-bold" for="ease">
+
+      <label class="relative text-gray-700 text-lg font-bold" for="ease">
         Ease: {{ task.ease }}
+        <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'ease'" @mouseleave="showToolTip = ''">&#9432;</span>
+        <ToolTip class="absolute" v-if="showToolTip === 'ease'" variable='ease'/>
       </label>
       <input type="range" min="1" max="10" value="5" id="ease" v-model="task.ease">
-      <p class="text-gray-700 text-lg font-bold">ICE Score: {{ iceScore }}</p>
+
+      <p class="relative text-gray-700 text-lg font-bold">
+        ICE Score: {{ iceScore }}
+        <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'ice-score'" @mouseleave="showToolTip = ''">&#9432;</span>
+        <ToolTip class="absolute" v-if="showToolTip === 'ice-score'" variable='ice-score'/>
+      </p>
+
     </div>
 
     <div>
@@ -35,9 +50,18 @@
 </template>
 
 <script>
+import ToolTip from '../components/ToolTip.vue'
 export default {
   name: 'AddForm',
   props: ['task', 'handleSubmit', 'buttonText', 'error'],
+  components: {
+    ToolTip
+  },
+  data () {
+    return {
+      showToolTip: ''
+    }
+  },
   computed: {
     iceScore () {
       const result = (parseInt(this.task.impact) + parseInt(this.task.confidence) + parseInt(this.task.ease)) / 3
