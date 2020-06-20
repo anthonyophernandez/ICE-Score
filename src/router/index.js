@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+import store from '../store'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,7 +20,15 @@ const routes = [
   {
     path: '/task/:id/edit',
     name: 'EditTask',
-    component: () => import(/* webpackChunkName: 'EditTask' */ '../views/EditTask.vue')
+    component: () => import(/* webpackChunkName: 'EditTask' */ '../views/EditTask.vue'),
+    beforeEnter: async (to, from, next) => {
+      const task = await store.state.tasks.tasks.find(t => t.id === to.params.id)
+      if (task !== undefined) {
+        next()
+      } else {
+        next('/')
+      }
+    }
   }
 ]
 
