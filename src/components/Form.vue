@@ -50,12 +50,11 @@
 </template>
 
 <script>
-import ToolTip from '../components/ToolTip.vue'
 export default {
-  name: 'AddForm',
+  name: 'Form',
   props: ['task', 'handleSubmit', 'buttonText', 'error'],
   components: {
-    ToolTip
+    ToolTip: () => import(/* webpackChunkName: 'ToolTip' */ '../components/ToolTip.vue')
   },
   data () {
     return {

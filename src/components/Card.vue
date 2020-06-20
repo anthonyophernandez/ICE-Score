@@ -59,12 +59,11 @@
 </template>
 
 <script>
-import ToolTip from '../components/ToolTip.vue'
 export default {
   name: 'Card',
   props: ['task'],
   components: {
-    ToolTip
+    ToolTip: () => import(/* webpackChunkName: 'ToolTip' */ '../components/ToolTip.vue')
   },
   data () {
     return {

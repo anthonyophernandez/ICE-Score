@@ -6,11 +6,10 @@
 </template>
 
 <script>
-import Form from '../components/Form.vue'
 export default {
   name: 'CreateTask',
   components: {
-    Form
+    Form: () => import(/* webpackChunkName: 'Form' */ '../components/Form.vue')
   },
   data () {
     return {

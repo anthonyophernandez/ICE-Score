@@ -6,12 +6,11 @@
 </template>
 
 <script>
-import Form from '../components/Form.vue'
 import { mapGetters } from 'vuex'
 export default {
   name: 'EditTask',
   components: {
-    Form
+    Form: () => import(/* webpackChunkName: 'Form' */ '../components/Form.vue')
   },
   data () {
     return {

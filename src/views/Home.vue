@@ -11,12 +11,11 @@
 
 <script>
 import { mapState } from 'vuex'
-import Card from '../components/Card.vue'
 
 export default {
   name: 'Home',
   components: {
-    Card
+    Card: () => import(/* webpackChunkName: 'Card' */ '../components/Card.vue')
   },
   computed: {
     ...mapState({
