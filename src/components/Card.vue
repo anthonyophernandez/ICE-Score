@@ -20,21 +20,21 @@
 
       <div class="w-1/3">
 
-        <p class="relative text-xl font-semibold">
+        <p class="relative text-lg font-semibold">
           <span class="text-gray-500">I:</span>
           {{ task.impact }}
           <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'impact'" @mouseleave="showToolTip = ''">&#9432;</span>
           <ToolTip class="absolute" v-if="showToolTip === 'impact'" variable='impact'/>
         </p>
 
-        <p class="relative text-xl font-semibold">
+        <p class="relative text-lg font-semibold">
           <span class="text-gray-500">C:</span>
           {{ task.confidence }}
           <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'confidence'" @mouseleave="showToolTip = ''">&#9432;</span>
           <ToolTip class="absolute" v-if="showToolTip === 'confidence'" variable='confidence'/>
         </p>
 
-        <p class="relative text-xl font-semibold">
+        <p class="relative text-lg font-semibold">
           <span class="text-gray-500">E:</span>
           {{ task.ease }}
           <span class="hover:text-blue-300 cursor-pointer" @mouseover="showToolTip = 'ease'" @mouseleave="showToolTip = ''">&#9432;</span>
